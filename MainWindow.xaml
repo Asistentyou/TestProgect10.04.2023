@@ -1,0 +1,91 @@
+﻿<Window x:Class="MVVC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:local="clr-namespace:MVVC"
+        mc:Ignorable="d"
+         Title="MVVM" Height="417" Width="525"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="40" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="0.8*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="0.2*" />
+        </Grid.RowDefinitions>
+        <Menu Grid.ColumnSpan="2" >
+            <MenuItem Header="Файл">
+                <MenuItem Header="Открыть" Command="{Binding OpenCommand}" />
+                <MenuItem Header="Сохранить" Command="{Binding SaveCommand}" />
+            </MenuItem>
+        </Menu>
+        <ListBox Grid.Row="1" ItemsSource="{Binding Phones}"
+                 SelectedItem="{Binding SelectedPhone}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5">
+                        <TextBlock FontSize="18" Text="{Binding Path=Title}" />
+                        <TextBlock Text="{Binding Path=Razdel}" />
+                        <TextBlock Text="{Binding Path=Ingridient}" />
+                        <TextBlock Text="{Binding Path=Opicanie}" />
+                        <TextBlock Text="{Binding Path=Kalor}" />
+                        <TextBlock Text="{Binding Path=Price}" />
+                        <TextBlock Text="{Binding Path=Photo}" />
+                        <Image x:Name="para" Width="100" Height="100" Source="{Binding Photo}"></Image>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Command="{Binding AddCommand}">+</Button>
+            <Button Command="{Binding RemoveCommand}"
+                    CommandParameter="{Binding SelectedPhone}">-</Button>
+            <Button Content="2x">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseDoubleClick">
+                        <i:InvokeCommandAction
+                            Command="{Binding DoubleCommand}"
+                            CommandParameter="{Binding SelectedPhone}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" DataContext="{Binding SelectedPhone}">
+            <TextBlock Text="Выбранный элемент"  />
+            <TextBlock Text="Нзвание блюда" />
+            <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="Раздел (Горячее, Десерты и т.д)" />
+            <TextBox Text="{Binding Razdel, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="Основной ингридиент" />
+            <TextBox Text="{Binding Ingridient, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="Описание" />
+            <TextBox Text="{Binding Opicanie, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="Калорийность (на 100 грамм)" />
+            <TextBox Text="{Binding Kalor, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="Цена" />
+            <TextBox Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="Фото" />
+            <StackPanel Orientation="Horizontal">
+            <TextBox x:Name="photos" Text="{Binding Photo, UpdateSourceTrigger=PropertyChanged }" Width="150" />
+                <Button Width="30" Height="10" Click="Button_Click"></Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
