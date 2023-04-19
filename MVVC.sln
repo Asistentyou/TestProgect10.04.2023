@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVC", "MVVC.csproj", "{9A9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp3", "D:\inform\visual studio\WpfApp3\WpfApp3.csproj", "{B91C438F-9CB2-44DE-AF19-6FFE08AA75C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLibery", "D:\inform\visual studio\MyLibery\MyLibery.csproj", "{A3E5FE6E-FB56-4D12-9427-7A4010320191}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B91C438F-9CB2-44DE-AF19-6FFE08AA75C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B91C438F-9CB2-44DE-AF19-6FFE08AA75C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B91C438F-9CB2-44DE-AF19-6FFE08AA75C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3E5FE6E-FB56-4D12-9427-7A4010320191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3E5FE6E-FB56-4D12-9427-7A4010320191}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3E5FE6E-FB56-4D12-9427-7A4010320191}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3E5FE6E-FB56-4D12-9427-7A4010320191}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
