@@ -37,3 +37,4 @@ C:\Users\Дмитрий\Desktop\MVVC\obj\Debug\MVVC.exe
 C:\Users\Дмитрий\Desktop\MVVC\obj\Debug\MVVC.pdb
 C:\Users\Дмитрий\Desktop\MVVC\obj\Debug\Window1.g.cs
 C:\Users\Дмитрий\Desktop\MVVC\obj\Debug\Window1.baml
+C:\Users\Дмитрий\Desktop\MVVC\obj\Debug\MVVC.csproj.AssemblyReference.cache
