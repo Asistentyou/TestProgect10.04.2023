@@ -35,5 +35,11 @@ namespace MVVC
             string s = openFileDialog.FileName;
             photos.Text = s;
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Window1 wn = new Window1();
+            wn.Show();
+        }
     }
 }
